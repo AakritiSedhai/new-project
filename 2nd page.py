@@ -1,7 +1,7 @@
 from tkinter import *
 from PIL import Image, ImageTk
 window=Tk()
-window.title("Sign-in")
+window.title("Main Page")
 window.geometry('640x420')
 window.resizable(False,False)
 window.config(bg="#0a3570")
