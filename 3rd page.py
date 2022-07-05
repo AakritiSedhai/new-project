@@ -18,9 +18,9 @@ delete_btn=Button(window,text="DELETE PRODUCT",font=("comic sans",14,"normal"),
 delete_btn.place(x=90,y=210)
 Edit_btn=Button(window,text="EDIT QUANTITY",font=("comic sans",14,"normal"),
                      bg="#ffbd59",fg="#0c0c0c",border=0,activebackground="#ffbd59",activeforeground="#0c0c0c")
-Edit_btn.place(x=93,y=303)
+Edit_btn.place(x=100,y=303)
 home=ImageTk.PhotoImage((Image.open("home icon.png")))
-home_btn=Button(window, image=home,border=0,bg="#ffffff")
+home_btn=Button(window, image=home,bd=0,bg="#f2f2f2",activebackground="#f2f2f2")
 home_btn.place(x=10, y=5)
 window.mainloop()
 
