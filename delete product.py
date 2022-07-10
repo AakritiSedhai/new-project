@@ -14,7 +14,10 @@ back_btn=Button(window, image=back,bd=0,bg="#f2f2f2",activebackground="#f2f2f2")
 back_btn.place(x=10, y=13)
 pn_entry =Entry(window,bd=0, width=9,font=('comic sans', 17, 'normal'),bg="#ffffff")
 pn_entry.place(x=260,y=162)
-pn_entry =Entry(window,bd=0, width=9,font=('comic sans', 17, 'normal'),bg="#ffffff")
-pn_entry.place(x=260,y=162)
+sku_entry =Entry(window,bd=0, width=9,font=('comic sans', 17, 'normal'),bg="#ffffff")
+sku_entry.place(x=260,y=232)
+delete_btn1=Button(window,text="DELETE",font=("comic sans",12,"normal"),
+                     bg="#ff1515",fg="#0c0c0c",border=0,activebackground="#ff1515",activeforeground="#0c0c0c")
+delete_btn1.place(x=283,y=316)
 
 window.mainloop()
