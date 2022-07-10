@@ -1,0 +1,20 @@
+from tkinter import *
+from PIL import Image, ImageTk
+window=Tk()
+window.title("Main Page")
+window.geometry('640x420')
+window.resizable(False,False)
+window.config(bg="#0a3570")
+img1 = ImageTk.PhotoImage(file="delete product.png")
+my_canvas=Canvas(window,width=200,height=200,bg="#0a3570")
+my_canvas.create_image(0,0,image=img1,anchor=NW)
+my_canvas.pack(fill="both",expand=True)
+back=ImageTk.PhotoImage((Image.open("back icon.png")))
+back_btn=Button(window, image=back,bd=0,bg="#f2f2f2",activebackground="#f2f2f2")
+back_btn.place(x=10, y=13)
+pn_entry =Entry(window,bd=0, width=9,font=('comic sans', 17, 'normal'),bg="#ffffff")
+pn_entry.place(x=260,y=162)
+pn_entry =Entry(window,bd=0, width=9,font=('comic sans', 17, 'normal'),bg="#ffffff")
+pn_entry.place(x=260,y=162)
+
+window.mainloop()
