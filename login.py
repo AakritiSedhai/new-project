@@ -1,4 +1,4 @@
-#codes to connect backend and frontend
+#codes to connect database and frontend
 
 import mysql.connector #module to operate on database
 def login():

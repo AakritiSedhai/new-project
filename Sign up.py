@@ -1,4 +1,4 @@
-#code to connect frontend to backend
+#code to connect database to frontend
 def signup(): 
     empty="" #for autoincrement field
     user=user_entry.get()
