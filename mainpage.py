@@ -2,6 +2,9 @@ from profiles import *
 
 from tkinter import *
 from PIL import Image, ImageTk
+from Dashboard import *
+def dashboardopen():
+    dashboardcall()
 
 def mainpagecall():
     window=Tk()
@@ -16,7 +19,7 @@ def mainpagecall():
     my_canvas.pack(fill="both",expand=True)
     
     dashboard_btn=Button(window,text="DASHBOARD",font=("comic sans",18,"normal"),
-                        bg="#ffbd59",fg="#0c0c0c",border=0,activebackground="#ffbd59",activeforeground="#0c0c0c")
+                        bg="#ffbd59",fg="#0c0c0c",border=0,activebackground="#ffbd59",activeforeground="#0c0c0c",command=dashboardopen)
     dashboard_btn.place(x=109,y=97)
     product_btn=Button(window,text="PRODUCT",font=("comic sans",18,"normal"),
                     bg="#ffbd59",fg="#0c0c0c",border=0,activebackground="#ffbd59",activeforeground="#0c0c0c")
