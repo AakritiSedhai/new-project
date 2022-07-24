@@ -1,1 +1,1 @@
-username_entry.insert(0,"username")
+img2 = ImageTk.PhotoImage(Image.open("user-profile-icon-free-vector.png"))
