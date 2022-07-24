@@ -2,9 +2,7 @@ from profiles import *
 
 from tkinter import *
 from PIL import Image, ImageTk
-def profileopen():
-    profilecall()
-    
+
 def mainpagecall():
     window=Tk()
     window.title("Main Page")
@@ -32,20 +30,6 @@ def mainpagecall():
     pos_btn=Button(window,text="POINT OF SALES",font=("comic sans",18,"normal"),
                             bg="#ffbd59",fg="#0c0c0c",border=0,activebackground="#ffbd59",activeforeground="#0c0c0c")
     pos_btn.place(x=245,y=313)
-    profile_b2 = Button(window, image=img2,border=0)
-    profile_b2.place(x=10, y=3)
-    profile_btn=Button(window,text="Profile",font=("comic sans",14,"normal"),
-                            bg="#ffffff",fg="#807772",border=0,activebackground="#ffffff",activeforeground="#807772",command=profileopen)
-    profile_btn.place(x=50,y=10)
-
-    log_out_btn=Button(window,text="Log out",font=("comic sans",14,"normal","underline"),
-                            bg="#ffffff",fg="#807772",border=0,activebackground="#ffffff",activeforeground="#807772")
-    log_out_btn.place(x=500,y=10)
-    img3=ImageTk.PhotoImage(Image.open("log out icon.png"))
-
-    logout_b2 = Button(window, image=img3,border=0,bg="#ffffff")
-    logout_b2.place(x=580, y=5)
-
 
 
     window.mainloop()
