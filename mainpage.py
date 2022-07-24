@@ -3,8 +3,13 @@ from profiles import *
 from tkinter import *
 from PIL import Image, ImageTk
 from Dashboard import *
+from product_page import *
+
 def dashboardopen():
     dashboardcall()
+    
+def productpageopen():
+    productpagecall()
 
 def mainpagecall():
     window=Tk()
@@ -22,7 +27,7 @@ def mainpagecall():
                         bg="#ffbd59",fg="#0c0c0c",border=0,activebackground="#ffbd59",activeforeground="#0c0c0c",command=dashboardopen)
     dashboard_btn.place(x=109,y=97)
     product_btn=Button(window,text="PRODUCT",font=("comic sans",18,"normal"),
-                    bg="#ffbd59",fg="#0c0c0c",border=0,activebackground="#ffbd59",activeforeground="#0c0c0c")
+                    bg="#ffbd59",fg="#0c0c0c",border=0,activebackground="#ffbd59",activeforeground="#0c0c0c",command=productpageopen)
     product_btn.place(x=423,y=97)
     low_stock_btn=Button(window,text="LOW STOCK",font=("comic sans",18,"normal"),
                         bg="#ffbd59",fg="#0c0c0c",border=0,activebackground="#ffbd59",activeforeground="#0c0c0c")
