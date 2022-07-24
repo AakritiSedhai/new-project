@@ -1,9 +1,9 @@
 from tkinter import *
 from PIL import Image, ImageTk
 def addproductcall():
-    window=Tk()
+    window=Toplevel()
     window.title("Add product")
-    window.geometry('640x420')
+    window.geometry('640x420+350+150')
     window.resizable(False,False)
     window.config(bg="#0a3570")
     img1 = ImageTk.PhotoImage(file="add product.png")
