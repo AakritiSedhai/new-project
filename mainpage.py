@@ -5,10 +5,10 @@ from PIL import Image, ImageTk
 from Dashboard import *
 from product_page import *
 
-def dashboardopen():
+def dashboardopen(): #linking to dashboard page
     dashboardcall()
     
-def productpageopen():
+def productpageopen(): #linking to product page
     productpagecall()
 
 def mainpagecall():
