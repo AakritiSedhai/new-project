@@ -1,20 +1,24 @@
-#Code to connect database to frontend
-import mysql.connector
-mydb=mysql.connector.connect(
-    host="localhost",
-    user="root",
-    password="",
-    database="inventory"
-)
-mycursor=mydb.cursor() 
-mycursor.execute("select * from product where Product_Quantity<5") #Will fetch only products which have less than 5 quantity
-fetch=mycursor.fetchall()
 
-#Frontend code
+import mysql.connector
 from tkinter import *
 from PIL import Image, ImageTk
 
+
 def lowstockcall():
+    
+    #Code to connect database to frontend
+    mydb=mysql.connector.connect(
+        host="localhost",
+        user="root",
+        password="",
+        database="inventory"
+    )
+    mycursor=mydb.cursor() 
+    mycursor.execute("select * from product where Product_Quantity<5") #Will fetch only products which have less than 5 quantity
+    fetch=mycursor.fetchall()
+
+#Frontend code
+
     window = Toplevel()
     window.title("Main Page")
     window.geometry('640x420+350+150')

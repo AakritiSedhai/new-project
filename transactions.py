@@ -2,14 +2,17 @@ from tkinter import *
 from PIL import Image, ImageTk
 import mysql.connector
 
-mydb=mysql.connector.connect( #connecting to database
-    host="localhost",
-    user="root",
-    password="",
-    database="inventory"
-)
-
 def transactionscall():
+
+    #connecting frontend to database
+    mydb=mysql.connector.connect( #connecting to database
+        host="localhost",
+        user="root",
+        password="",
+        database="inventory"
+    )
+
+    #frontend code
     window = Toplevel()
     window.title("Main Page")
     window.geometry('640x420+350+150')
