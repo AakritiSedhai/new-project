@@ -4,17 +4,19 @@ from Add_product import *
 from delete_product import *
 from edit_product import *
 
-def addproductopen(): #link to add product page
-    addproductcall() 
-    
-def deleteproductopen(): #link to delete product page
-    deleteproductcall()
-
-def editproductopen():
-    editproductcall()
-    
-#front end code 
 def productpagecall():
+
+    def addproductopen(): #link to add product page
+        addproductcall() 
+        
+    def deleteproductopen(): #link to delete product page
+        deleteproductcall()
+
+    def editproductopen():
+        editproductcall()
+    
+    #front end code 
+
     window=Toplevel()
     window.title("Product")
     window.geometry('640x420+350+150')

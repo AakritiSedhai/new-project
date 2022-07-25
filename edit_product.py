@@ -3,37 +3,39 @@ from PIL import Image, ImageTk
 import mysql.connector
 from tkinter import messagebox
 
-#connecting frontend to database
-def update():
-    mydb=mysql.connector.connect(   #establishing connection with database
-        host="localhost",
-        user="root",
-        password="",
-        database="inventory")
-    mycursor=mydb.cursor()
-    sku=sku1_entry.get()
-    try: #disallow entering strings in quantity
-        qnty=int(qnty1_entry.get())
-    except:
-        messagebox.showinfo("alert","cannot be string")
-    else:
-        qnty=str(qnty)
-        mycursor.execute("select * from product") 
-        records=mycursor.fetchall()
-        if qnty=="": #to not allow null entries
-            messagebox.showinfo("Alert","Quantity cannot be null")
-        else:
-            for row in records:
-                if row[2]==sku: #to check if the product with gives sku exists or not
-                    mycursor.execute("update product set Product_Quantity='"+qnty+"' where Product_SKU='"+sku+"'")
-                    mydb.commit()
-                    messagebox.showinfo("Alert","Quantity updated successfully")
-                    break
-            else:
-                messagebox.showinfo("Alert","No such product found")
-
-#front end code
 def editproductcall():
+
+#connecting frontend to database
+    def update():
+        mydb=mysql.connector.connect(   #establishing connection with database
+            host="localhost",
+            user="root",
+            password="",
+            database="inventory")
+        mycursor=mydb.cursor()
+        sku=sku1_entry.get()
+        try: #disallow entering strings in quantity
+            qnty=int(qnty1_entry.get())
+        except:
+            messagebox.showinfo("alert","cannot be string")
+        else:
+            qnty=str(qnty)
+            mycursor.execute("select * from product") 
+            records=mycursor.fetchall()
+            if qnty=="": #to not allow null entries
+                messagebox.showinfo("Alert","Quantity cannot be null")
+            else:
+                for row in records:
+                    if row[2]==sku: #to check if the product with gives sku exists or not
+                        mycursor.execute("update product set Product_Quantity='"+qnty+"' where Product_SKU='"+sku+"'")
+                        mydb.commit()
+                        messagebox.showinfo("Alert","Quantity updated successfully")
+                        break
+                else:
+                    messagebox.showinfo("Alert","No such product found")
+
+    #front end code
+
     window=Toplevel()
     window.title("Main Page")
     window.geometry('640x420+350+150')

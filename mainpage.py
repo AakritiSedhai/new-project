@@ -1,25 +1,29 @@
-from profiles import *
-
 from tkinter import *
 from PIL import Image, ImageTk
 from Dashboard import *
 from product_page import *
 from low_stock import *
 from transactions import *
-
-def dashboardopen(): #linking to dashboard page
-    dashboardcall()
-    
-def productpageopen(): #linking to product page
-    productpagecall()
-
-def lowstockopen(): #linking to lowstock page
-    lowstockcall()
-
-def transactionsopen(): #linking to lowstock page
-    transactionscall()
+from POS import *
 
 def mainpagecall():
+
+    def dashboardopen(): #linking to dashboard page
+        dashboardcall()
+        
+    def productpageopen(): #linking to product page
+        productpagecall()
+
+    def lowstockopen(): #linking to lowstock page
+        lowstockcall()
+
+    def transactionsopen(): #linking to lowstock page
+        transactionscall()
+
+    def POSopen(): #linking to POS page
+        POScall()
+
+
     window=Tk()
     window.title("Main Page")
     window.geometry('640x420+350+150')
@@ -48,7 +52,7 @@ def mainpagecall():
     transactions_btn.place(x=405,y=205)
 
     pos_btn=Button(window,text="POINT OF SALES",font=("comic sans",18,"normal"),
-                            bg="#ffbd59",fg="#0c0c0c",border=0,activebackground="#ffbd59",activeforeground="#0c0c0c")
+                            bg="#ffbd59",fg="#0c0c0c",border=0,activebackground="#ffbd59",activeforeground="#0c0c0c",command=POSopen)
     pos_btn.place(x=245,y=313)
 
 

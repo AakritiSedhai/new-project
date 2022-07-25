@@ -3,31 +3,34 @@ from PIL import Image, ImageTk
 import mysql.connector
 from tkinter import messagebox
 
-#connecting to database
-mydb=mysql.connector.connect(   #establishing connection with database
-    host="localhost",
-    user="root",
-    password="",
-    database="inventory")
-mycursor=mydb.cursor()
-mycursor.execute("select * from product")
-records=mycursor.fetchall()
-
-def deleteproduct(): #dunction to delete product
-    pn=pn_entry.get()
-    sku=sku_entry.get()
-    for row in records: #iterates through all records in inventory
-        if row[0]==pn and row[2]==sku: #makes sure the deleted product already exists
-            mycursor.execute("delete from product where Product_Name='"+pn+"' and Product_SKU='"+sku+"'")
-            messagebox.showinfo('Alert',"Product deleted successfully")
-            mydb.commit()
-            break
-    else: 
-        messagebox.showinfo('Alert',"No such product exists")
-            
-
-#front end code
 def deleteproductcall():
+
+    #connecting to database
+    
+    mydb=mysql.connector.connect(   #establishing connection with database
+        host="localhost",
+        user="root",
+        password="",
+        database="inventory")
+    mycursor=mydb.cursor()
+    mycursor.execute("select * from product")
+    records=mycursor.fetchall()
+
+    def deleteproduct(): #dunction to delete product
+        pn=pn_entry.get()
+        sku=sku_entry.get()
+        for row in records: #iterates through all records in inventory
+            if row[0]==pn and row[2]==sku: #makes sure the deleted product already exists
+                mycursor.execute("delete from product where Product_Name='"+pn+"' and Product_SKU='"+sku+"'")
+                messagebox.showinfo('Alert',"Product deleted successfully")
+                mydb.commit()
+                break
+        else: 
+            messagebox.showinfo('Alert',"No such product exists")
+                
+
+    #front end code
+
     window=Toplevel()
     window.title("Main Page")
     window.geometry('640x420+350+150')
