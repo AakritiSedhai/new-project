@@ -1,21 +1,20 @@
-#Connecting front end and database
+
 import mysql.connector
-mydb=mysql.connector.connect(
+from tkinter import *
+from PIL import Image, ImageTk
+def dashboardcall():
+    #Connecting front end and database
+    mydb=mysql.connector.connect(
     host="localhost",
     user="root",
     password="",
     database="inventory"
-)
-mycursor=mydb.cursor()
-mycursor.execute("select * from product")
-fetch=mycursor.fetchall()
+    )
+    mycursor=mydb.cursor()
+    mycursor.execute("select * from product")
+    fetch=mycursor.fetchall()
 
-
-
-
-from tkinter import *
-from PIL import Image, ImageTk
-def dashboardcall():
+    #front end code
     window = Toplevel()
     window.title("Main Page")
     window.geometry('640x420+350+150')
@@ -48,11 +47,11 @@ def dashboardcall():
 
         entry2=Entry(window,bd=1, font=('Arial 16'),width=15)
         entry2.config(highlightbackground="red")
-        entry2.insert(1,row[1])
+        entry2.insert(1,row[2])
         entry2.place(x=215,y=n)
 
         entry3=Entry(window,bd=1, font=('Arial 16'),width=15)
-        entry3.insert(1,row[2])
+        entry3.insert(1,row[1])
         entry3.place(x=400,y=n)
         n=n+30
 
