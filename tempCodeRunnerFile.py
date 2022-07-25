@@ -1,1 +1,7 @@
-img2 = ImageTk.PhotoImage(Image.open("user-profile-icon-free-vector.png"))
+mydb=mysql.connector.connect(   #establishing connection with database
+        host="localhost",
+        user="root",
+        password="",
+        database="inventory")
+        mycursor=mydb.cursor()
+        mycursor.execute("select * from users")
