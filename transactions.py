@@ -14,7 +14,7 @@ def transactionscall():
 
     #frontend code
     window = Toplevel()
-    window.title("Main Page")
+    window.title("Transactions")
     window.geometry('640x420+350+150')
     window.resizable(False, False)
     window.config(bg="#0a3570")
