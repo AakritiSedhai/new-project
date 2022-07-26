@@ -25,6 +25,7 @@ def signup():
                     break
             else:
                 mycursor.execute("insert into users values('"+empty+"','"+user+"','"+pw+"')") #creating new record
+                messagebox.showinfo("Alert","User Created successfully")
                 mycursor.execute("commit")
                 mydb.close()
                 window.destroy()
